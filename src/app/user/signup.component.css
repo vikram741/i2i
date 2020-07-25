@@ -1,0 +1,55 @@
+.top {
+    background-color:black;
+    color: yellow;
+    font-family: sans-serif;
+    padding:10px;
+    padding-left:40%;
+    
+}
+
+form {
+    align-items: center;
+	padding-left:30%;
+	padding-right:30%;
+}
+
+input {
+    width: 50%;
+    padding: 12px;
+    border-radius:4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; 
+}
+
+input {
+	margin-left: 120px;
+}
+
+label {
+position: absolute;
+font-size: 20px;
+}
+
+button {
+	border-radius:4px;
+	width:15%;
+	padding:10px;
+	
+}
+
+#submitbtn {
+	color:green;
+}
+
+#cancelbtn {
+	color:red;
+}
+
+
+
+
+
