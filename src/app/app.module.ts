@@ -1,19 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, NgForm, Validators} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignUpComponent } from './user/signup.component';
+
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { BrowseComponent } from './browse/browse.component';
+import { AdminComponent } from './admin/admin.component';
+import { BookComponent } from './browse/book/book.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent
+    SigninComponent,
+    SignupComponent,
+    BrowseComponent,
+    AdminComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

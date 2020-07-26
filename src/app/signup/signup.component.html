@@ -1,0 +1,55 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="assets/images/eye.jpeg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        I For Eye
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <span class="nav-item"> Sign Up</span>
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container">
+    <form #signupForm="ngForm" class="offset-md-2 col-md-8" (ngSubmit)="signup(signupForm.value)" novalidate>
+        <div class="form-group row">
+            <label for="username" class="col-sm-3 col-form-label">Name</label>
+            <div class="col-sm-9">
+               <em class="error" *ngIf="signupForm.controls.name?.invalid && (signupForm.controls.name.touched || signupForm.controls.name.errors.required) ">*Name is Required</em>
+                <input (ngModel)="name" name="name" type="text" class="form-control" id="username" placeholder="name" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <em class="error" *ngIf="signupForm.controls.email?.invalid && (signupForm.controls.email.touched || signupForm.controls.email.errors.required)">*Email is Required</em>
+                <em *ngIf="signupForm.controls.errors?.email">Invalid Email</em> 
+                <input type="text" (ngModel)="email" name="email" class="form-control" id="staticEmail"
+                    placeholder="email@example.com" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phonenumber" class="col-sm-3 col-form-label">Phone Number</label>
+            <div class="col-sm-9">
+                <em class="error" *ngIf="signupForm.controls.phno?.invalid && (signupForm.controls.phno.touched || signupForm.controls.phno.errors.required) ">*Phone Number is Required</em>
+                <input type="text" (ngModel)="phno" minlength="10" maxlength="10" name="phno" class="form-control"
+                    id="phonenumber" placeholder="phonenumber" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-9">
+                <em class="error" *ngIf="signupForm.controls.password?.invalid && (signupForm.controls.password.touched || signupForm.controls.password?.errors.required)">*Password is Required</em>
+                <!-- <em class="error" *ngIf="signupForm.controls.password?.errors.minlength || signupForm.controls.password?.errors.maxlength )">*Password Length(8-16)</em>
+                --><input type="password" minlength="8" maxlength="16" (ngModel)="password" name="password" class="form-control"
+                    id="inputPassword" placeholder="password" required>
+            </div>
+        </div>
+        <div class="offset-md-4 col-md-4">
+            <button [disabled]="signupForm.invalid" style="margin-right: 10px;" type="submit"
+                class="btn btn-success">Submit</button>
+            <button type="button" (click)="cancel()" class="btn btn-danger">Cancel</button>
+        </div>
+    </form>
+
+</div>
