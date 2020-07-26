@@ -51,6 +51,29 @@ export class AdminComponent implements OnInit {
     this.addedCat.delete(x)
   }
 
+  imageToShow = "";
+  showpreview = false;
+  clickDummy(){
+    document.getElementById('imagePicker').click();
+  }
+  addImage(image: any) {
+   // console.log(imageInput)
+      const file: File = image.target.files[0];
+      const reader = new FileReader();
+  
+      if (image) {
+      } reader.addEventListener('load', (event: any) => {
 
+        console.log(event.target.result, file);
+        this.imageToShow = event.target.result
+        this.showpreview=true;
+      })
+      reader.readAsDataURL(file);
+    }
 
+   
 }
+
+
+
+

@@ -59,9 +59,17 @@
 
                         <div class="form-group">
                             <label for="coverPhoto"> Pick cover Photo   </label>
-                            <img class="ml-3" src="../../assets/image.svg" alt="" height="30" >
+                            <div (click)="clickDummy()" style="cursor: pointer;display: inline-block;">
+                                <img class="ml-3" src="../../assets/addimg.webp" alt="" height="40" >
+                            </div>
                             <br>
-                            <input type="file" accept="image/*" >
+                            <img *ngIf="showpreview" src="{{imageToShow}}" alt="" class="preview p-1">
+                            <input type="file" id=imagePicker style="display:none" accept="image/*" (change)="addImage($event)" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Upload image book</label><br>
+                            <input type="file" accept="application/pdf,application/ppt,application/pptx,application/doc,application/docx" >
                         </div>
 
                         <div style="text-align: center;">
