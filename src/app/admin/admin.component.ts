@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
 
-  add_book = true;
-  show_request = false;
+  add_book = false;
+  show_request = true;
   constructor() { }
 
   categories = [

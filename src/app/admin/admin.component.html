@@ -3,7 +3,7 @@
     <div *ngIf="add_book">
         <div class="container">
 
-            <div *ngIf="add_book">
+            <div >
                 <div class="d-flex justify-content-center">
                     <form #logForm="ngForm">
 
@@ -21,7 +21,7 @@
     
                         <div class="form-group">
                             <label for="exampleInputPassword1">Desciption</label>
-                            <textarea name="password" ngModel  #password="ngModel" 
+                            <textarea name="password" ngModel  #password="ngModel"  maxlength="150"
                                 class="form-control" id="exampleInputPassword1" placeholder="Describe the book" role="5"
                                 cols="50">
                                   </textarea>
@@ -75,11 +75,105 @@
                         <div style="text-align: center;">
                             <button type="submit" [disabled]="logForm.form.invalid" class="btn btn-primary"
                                 (click)="addBook()">+ Add </button>
+                                <br> <br> <br> <br> <br>
                         </div>
                     </form>
                 </div>
-                
+            </div>
+        </div>
+    </div>
 
+    <div *ngIf="show_request" >
+        <div class="book">
+            <div class="inside-book">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="">
+                            <img class="bookCover" src="../../assets/bookcover2.jpg" alt="">
+                        
+                            <div class="desc">
+                                <br>
+                                <h5>Giraff can't dance</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum dolore libero illum aliquid porro id rem. Quis eligendi hic inventore, amet delectus expedita, quidem perferendis, nihil nesciunt quas mollitia?</p>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-around">
+                            <div>
+                                <br>
+                                <div class="player">
+                                    <audio controls disablepictureinpicture controlslist="nodownload">
+                                        <source src="../../assets/Naalone.mp3" >
+                                      Your browser does not support the audio element.
+                                      </audio>
+                                </div>
+                                <br>
+                                <div class="options">
+                                    <div class="d-flex">
+                                        <div>
+                                            <button class="submitBtn p-1 pl-3 pr-3 mr-4">
+                                                    Upload
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="submitBtn2 p-1 pl-3 pr-3">
+                                                Reject
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="player">
+                                    <audio controls disablepictureinpicture controlslist="nodownload">
+                                        <source src="../../assets/Naalone.mp3" >
+                                      Your browser does not support the audio element.
+                                      </audio>
+                                </div>
+                                <br>
+                                <div class="options">
+                                    <div class="d-flex">
+                                        <div>
+                                            <button class="submitBtn p-1 pl-3 pr-3 mr-4">
+                                                    Upload
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="submitBtn2 p-1 pl-3 pr-3">
+                                                Reject
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="player">
+                                    <audio controls disablepictureinpicture controlslist="nodownload">
+                                        <source src="../../assets/Naalone.mp3" >
+                                      Your browser does not support the audio element.
+                                      </audio>
+                                </div>
+                                <br>
+                                <div class="options">
+                                    <div class="d-flex">
+                                        <div>
+                                            <button class="submitBtn p-1 pl-3 pr-3 mr-4">
+                                                    Upload
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="submitBtn2 p-1 pl-3 pr-3">
+                                                Reject
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

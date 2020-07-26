@@ -12,13 +12,10 @@
   p {
     margin: 0;
   }
-
-
-
   .toolbar {
     height: 60px;
     width: 100vw;
-    padding: 0 40px;
+    padding: 0 3vw;
     align-items: center;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
