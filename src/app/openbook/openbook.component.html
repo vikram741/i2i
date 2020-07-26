@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="book">
+        <div class="inside-book">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="d-flex justify-content-around">
+                        <img class="bookCover" src="../../assets/bookcover2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <div class="desc">
+                                <h5>Giraff can't dance</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat harum dolore libero illum aliquid porro id rem. Quis eligendi hic inventore, amet delectus expedita, quidem perferendis, nihil nesciunt quas mollitia?</p>    
+                            </div>
+                            <br>
+                            <div class="player">
+                                <audio controls disablepictureinpicture controlslist="nodownload">
+                                    <source src="../../assets/Naalone.mp3" >
+                                  Your browser does not support the audio element.
+                                  </audio>
+                            </div>
+                            <br>
+                            <div class="options">
+                                <div class="d-flex">
+                                    <div class="like p-2  ">
+                                        <img src="../../assets/like2.svg" alt="" height="25px">
+                                    </div>
+                                    <div class="like p-2">
+                                        <img src="../../assets/share.svg" alt="" height="25px">
+                                    </div>
+                                    <div class="flex-fill">
+
+                                    </div>
+                                    <div>
+                                        <button class="submitBtn p-1">
+                                                Submit audio
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="d-flex align-items-baseline">
+        <div class="flex-fill">
+            <h2>Similar</h2>
+        </div>
+        <div class="p-1">
+            <p>See all</p>
+        </div>
+    </div>
+    
+    <hr style="margin: 0;padding:0;">
+    
+    <div class="strip">
+        <app-book  *ngFor='let buk of arr' ></app-book>
+    </div>
+</div>
+

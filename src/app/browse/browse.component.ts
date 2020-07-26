@@ -9,7 +9,9 @@ export class BrowseComponent implements OnInit {
 
   constructor() { }
 
+  arr=[]
   ngOnInit() {
+    for(var x=0;x<6;x++)this.arr.push(1)
   }
 
 }
