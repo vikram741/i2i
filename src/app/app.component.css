@@ -27,9 +27,14 @@
   }
 
   .inputMain{
-    min-width: 50vw;
+    width: 40vw;  
+    min-width: 300px;
     border-radius: 20px;
     padding: 7px 20px;
     font-size: large;
+    box-shadow: 0 0 10px rgb(204, 204, 204);
+    margin-bottom: 3.5vh;
   }
-  
+  .inputMain:focus{
+    outline: none;
+  }

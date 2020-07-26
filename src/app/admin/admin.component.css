@@ -1,0 +1,13 @@
+.catBtn{
+    border: 1px rgb(177, 177, 177) solid;
+}
+.catBtn:hover{
+    background-color: white;
+    border: 1px black solid;
+}
+
+.selectedCat{
+    color: rgb(0, 0, 0);
+    border: 1px black solid;
+    display: inline-block;
+}
