@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, NgForm, Validators} from '@angular/forms';
+import { FormsModule, NgForm, Validators } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { BrowseComponent } from './browse/browse.component';
 import { AdminComponent } from './admin/admin.component';
 import { BookComponent } from './browse/book/book.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BookComponent } from './browse/book/book.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
