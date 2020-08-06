@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div *ngIf="loaded">
+
+        <div *ngIf="!active">
+            <div class="d-flex justify-content-center">
+                <img src="https://res.cloudinary.com/dbzbydch5/image/upload/v1596461948/samples/logo_grxwbz.png" alt="">
+            </div>
+            <div class="d-flex justify-content-center">
+                <h6>
+                    Thank you so much for joining us, {{userName}}!
+                </h6>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div>
+                    <h6>
+                        To finish signing up, you just need to conform that we got your email right.
+                    </h6>
+                    <br> 
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p> A email was sent to your email address,click on 'Conform email' and you are good to go.</p>
+            </div>
+        </div>
+
+        <div  *ngIf="active">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <img [src]="userDP" alt="" class="dp" >
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <button  class="updatedp pl-3 pt-1 pb-1 pr-3 mt-3" (click)="updateDp()">
+                            <img src="../../assets/camera.png" class="changedp mr-1" alt="">Update</button>
+                    </div>
+                    <div  style="display: none;">
+                        <input  id="profilePic" type="file" (change)="uploadDp($event.target.files)" accept="image/jpeg,image/jpg" >
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <br> <br> <br>
+                        <h3>{{userName}}</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

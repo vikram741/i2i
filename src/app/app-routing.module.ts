@@ -5,7 +5,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { OpenbookComponent } from './openbook/openbook.component';
-
+import {AccountComponent } from './account/account.component'
+import {AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,9 +16,10 @@ const routes: Routes = [
   },
   { path:"signin",component:SigninComponent },
   { path:"signup",component:SignupComponent },
-  { path:"browse",component:BrowseComponent },
+  { path:"browse",component:BrowseComponent},
   { path:"admin",component:AdminComponent },
   { path:"book",component:OpenbookComponent },
+  { path:'account',component:AccountComponent },
   { path:"**", redirectTo:'browse' }
 ];
 

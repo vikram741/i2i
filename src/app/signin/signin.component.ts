@@ -10,28 +10,34 @@ import { AuthService} from '../service/auth.service'
 export class SigninComponent implements OnInit {
 
   logInfo : {mail_id:string , password:string};
-  wrngmail = false;
-  wrngpswd = false;
+  wrnMailPswd = false;
   constructor(private auth : AuthService, private router:Router ) { 
       
   }
 
   ngOnInit() {
+    this.auth.loginStatus.subscribe((status)=>{
+      if(status.success)
+      {
+        this.router.navigate(['browse'])
+      }
+    })
   }
- loginUser(logData :{mail_id:string , password:string})
+ loginUser(logData :{email:string , password:string})
   {
-      this.auth.loginUser(logData).subscribe(
-        res => {console.log(res)
-          localStorage.setItem('token',res.token)
-          localStorage.setItem('mailid',logData.mail_id)
-          //console.log('in log comp---' , logData.mail_id)
-          this.router.navigate(['/user']);
 
+    console.log(logData)
+
+      this.auth.loginUser(logData).subscribe(
+        (res:any) => {console.log(res)
+          this.wrnMailPswd = false;
+           localStorage.setItem('token',res.token)
+           localStorage.setItem('name',res.name)
+           this.auth.loginStatus.next({success:true,active:res.active,loaded:true});
         }  ,
         err=>{
-          //console.log(err)
-          if(err.error.type == 'Mial Id not found')this.wrngmail = true;
-          if(err.error.type == 'Wrong Password'){ this.wrngmail = false; this.wrngpswd=true; }
+          console.log(err)
+          this.wrnMailPswd = true;
         }
       )
   }

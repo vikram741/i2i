@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
 
-  add_book = false;
+  add_book = true;
   show_request = true;
   constructor() { }
 

@@ -35,3 +35,17 @@
   .inputMain:focus{
     outline: none;
   }
+
+  .navActive{
+    border-bottom: 2px rgb(230, 105, 255) solid;
+  }
+
+ .dp
+ {
+    border-radius: 50%;
+    border: 1px rgb(206, 194, 194) solid;
+    padding: 1px;
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+ }

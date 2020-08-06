@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import {MatRippleModule} from '@angular/material/core';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,10 @@ import { AdminComponent } from './admin/admin.component';
 import { BookComponent } from './book/book.component';
 import { OpenbookComponent } from './openbook/openbook.component';
 import { CategoryComponent } from './category/category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TokenInterceptorService} from './service/token-interceptor.service';
+import { AccountComponent } from './account/account.component'
+
 
 @NgModule({
   declarations: [
@@ -21,14 +27,18 @@ import { CategoryComponent } from './category/category.component';
     AdminComponent,
     BookComponent,
     OpenbookComponent,
-    CategoryComponent
+    CategoryComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

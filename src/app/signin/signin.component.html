@@ -1,11 +1,15 @@
-<div class="row">
+
+<div class="container">
+  <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <form #logForm="ngForm">
-  
+    <div class="col-md-4 form mt-4 mr-2 ml-2">
+      <h2>
+        Welcome back!
+      </h2>
+      <form #logForm="ngForm" >
         <div class="form-group"> 
           <label for="exampleInputEmail1">Email address</label>
-          <input    name = "mail_id" ngModel required  email
+          <input    name = "email" ngModel required  email
           #mail ="ngModel"  
           type="email" class="form-control " id="exampleInputEmail1"  placeholder="Enter email">
           <div *ngIf="mail.invalid && ( mail.touched)" class="text-danger">
@@ -15,9 +19,6 @@
               <div *ngIf="mail.errors.email"> 
                   <small>Invalid mail</small>
               </div>
-          </div>
-          <div *ngIf="wrngmail" class="text-danger"> 
-            <small>Mial id not found</small>
           </div>
         </div>
           
@@ -34,14 +35,19 @@
                 <small>Should conatin minimum 8 characters</small>
             </div>
         </div>
-        <div *ngIf="wrngpswd" class="text-danger"> 
-          <small>Wrong password</small>
+        <div *ngIf="wrnMailPswd" class="text-danger"> 
+          <small>Incorrect email or password</small>
         </div>
         </div>
   
+        <div   style="text-align: center;">
+          <button type="submit" [disabled]="logForm.form.invalid" class="btn pl-3 pr-3"
+           [ngClass]="{'activeBtn': logForm.form.valid }"
+          (click)="loginUser(logForm.value)" > <strong>Submit</strong> </button>
+        </div>
   
-        <button type="submit" [disabled]="logForm.form.invalid" class="btn btn-primary" (click)="loginUser(logForm.value)" >Submit</button>
       </form>
     </div>
     <div class="col-md-4"></div>
   </div>
+</div>
