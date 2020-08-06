@@ -9,7 +9,7 @@ export class AccountService {
   changeDp(file:File)
   {
     const formData = new FormData();
-    formData.append()
+    // formData.append()
   }
 
 }
